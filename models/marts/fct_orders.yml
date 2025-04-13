@@ -8,40 +8,40 @@ models:
         enforced: true
     columns:
       - name: order_id
-        data_type: varchar
+        data_type: STRING
         constraints:
           - type: not_null
       - name: location_id
-        data_type: varchar
+        data_type: STRING
         constraints:
           - type: not_null
       - name: customer_id
-        data_type: varchar
+        data_type: STRING
       - name: order_total
-        data_type: number
+        data_type: FLOAT
       - name: tax_paid
-        data_type: number
+        data_type: FLOAT
       - name: ordered_at
-        data_type: timestamp_ntz
+        data_type: TIMESTAMP
       - name: customer_name
-        data_type: varchar
+        data_type: STRING
       - name: location_name
-        data_type: varchar
+        data_type: STRING
         tests:
           - accepted_values:
               values:
                 - "Brooklyn"
                 - "Philadelphia"
       - name: tax_rate
-        data_type: number
+        data_type: FLOAT
       - name: location_opened_at
-        data_type: timestamp_ntz
+        data_type: TIMESTAMP
       - name: ordered_month
-        data_type: number
+        data_type: INTEGER
       - name: ordered_day
-        data_type: number
+        data_type: INTEGER
       - name: ordered_year
-        data_type: number
+        data_type: INTEGER
     versions:                     
       - v: 1
           ##Matches above! Nothing more needed
@@ -50,7 +50,7 @@ models:
       - v: 2
         columns:
           - name: order_amount      ##v2 Adds in new column name and date type change
-            data_type: number
+            data_type: FLOAT
           - name: location_opened_at
             data_type: date
           - include: all            ##Includes all other fields
