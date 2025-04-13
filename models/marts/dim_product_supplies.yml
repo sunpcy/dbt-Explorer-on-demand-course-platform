@@ -7,13 +7,13 @@ models:
         enforced: true
     columns:
       - name: product_name
-        data_type: STRING  # เปลี่ยนจาก varchar เป็น STRING
+        data_type: STRING
         constraints:
           - type: not_null
         tests:
           - unique
       - name: product_type
-        data_type: STRING  # เปลี่ยนจาก varchar เป็น STRING
+        data_type: STRING
         constraints:
           - type: not_null
         tests:
@@ -22,7 +22,7 @@ models:
                 - "jaffle"
                 - "beverage"
       - name: product_description
-        data_type: STRING  # เปลี่ยนจาก varchar เป็น STRING
+        data_type: STRING
       - name: product_price
         data_type: FLOAT
         constraints:
@@ -34,7 +34,7 @@ models:
       - name: is_drink_item
         data_type: BOOLEAN
       - name: product_id
-        data_type: STRING  # เปลี่ยนจาก varchar เป็น STRING
+        data_type: STRING
         constraints:
           - type: not_null
         tests:
