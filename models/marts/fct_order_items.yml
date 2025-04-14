@@ -1,5 +1,8 @@
 models:
   - name: fct_order_items
+    description: |
+      A fact table that joins order items with order and customer-related data. 
+      Each row represents a single item in an order, enriched with location, tax, and customer details.
     access: public
     group: finance
     config:
@@ -10,6 +13,9 @@ models:
         data_type: STRING
         constraints:
           - type: not_null
+        tests:
+          - unique
+          - not_null
       - name: order_id
         data_type: STRING
         constraints:
